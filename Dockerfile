@@ -16,5 +16,9 @@ COPY . /app
 # Expose port 80 (optional, depending on your bot setup)
 EXPOSE 8080
 
-# Run the bot script when the container launches
-CMD ["python", "main.py"]
+# Copy the shell script that runs both Python scripts
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+# Run the shell script
+CMD ["./start.sh"]
