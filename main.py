@@ -59,6 +59,8 @@ async def art(update: Update, context: ContextTypes.DEFAULT_TYPE):
     logger.info(f"Message: {update.message.text if update.message else 'No message'}")
     
     try:
+        await update.message.reply_text("Generating Your Art! \nPlease wait ..")
+
         # Get market data
         market_data = get_raydium_data()
         logger.info(f"Got market data: {market_data}")
@@ -132,7 +134,8 @@ def get_raydium_data():
             
             # Format values
             if price != 'N/A':
-                price = f"${float(price):.4f}"
+                # price = f"${float(price)}"
+                price = f"${str(price)}"
             if volume24h != 'N/A':
                 volume24h = f"${int(float(volume24h)):,}"
             if liquidity != 'N/A':
