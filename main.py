@@ -21,8 +21,8 @@ logger = logging.getLogger(__name__)
 
 # Load environment variables
 load_dotenv()
-TOKEN = '7243623278:AAFwvUaGyraIQTtj-ouiwbF3EZY-1YCFLNQ'  # Hardcoded for testing
-# TOKEN = "7746073326:AAEVoCuTN6hfgkYbgN0Pm8KTL2qEkXetJKk"   # Kelvin's
+# TOKEN = '7243623278:AAFwvUaGyraIQTtj-ouiwbF3EZY-1YCFLNQ'  # Hardcoded for testing
+TOKEN = "7746073326:AAEVoCuTN6hfgkYbgN0Pm8KTL2qEkXetJKk"   # Kelvin's
 TOKEN_ADDRESS = '6t7heUCjsgxa5ZwFQyfZwY9cEm9ACMxjgJrH1MELpump'  # Hardcoded for testing
 BOT_TITLE = "ASScii art AI Agent"
 BOT_SUBTITLE = "Making Tech Sexier Than Your Girlfriend! 🔥🚨🚀"
@@ -234,7 +234,6 @@ def create_market_image(art_content, market_data):
                 draw.text((title_x + dx, title_y + dy), title, font=title_font, fill=GLOW_COLOR)
         draw.text((title_x, title_y), title, font=title_font, fill=MAIN_COLOR)
         
-        # Process ASCII art - convert Braille to blocks
         art_lines = art_content.split('\n')
         processed_lines = []
         for line in art_lines:
